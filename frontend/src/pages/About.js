@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const team = [
-  { name: 'Alex Chen', role: 'Founder & Lead Developer', emoji: '👨‍💻', bg: 'var(--primary)' },
-  { name: 'Priya Sharma', role: 'Content & Questions Lead', emoji: '📚', bg: '#10B981' },
-  { name: 'Marcus Webb', role: 'UX & Design', emoji: '🎨', bg: '#F59E0B' },
+  { name: 'Ujwal thakur', role: 'Founder & Lead Developer', emoji: '👨‍💻', bg: 'var(--primary)' },
+  { name: 'Harshit Kumar Bansal & Harshit Vedvyas', role: 'Content & Questions Lead', emoji: '📚', bg: '#10B981' },
+  { name: 'Hrithik Bugalia', role: 'UX & Design', emoji: '🎨', bg: '#F59E0B' },
 ];
 
 const techStack = [
@@ -121,7 +121,7 @@ const About = () => {
         {/* CTA */}
         <div style={{ textAlign: 'center' }}>
           <Link to="/signup" className="btn btn-primary btn-lg">
-            🚀 Join QuizMaster Pro Free
+            🚀 Join QBit for Free !!
           </Link>
         </div>
       </div>

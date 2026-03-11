@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 const contactInfo = [
-  { icon: '📧', label: 'Email', value: 'hello@quizmaster.pro', color: 'var(--primary)' },
-  { icon: '🐦', label: 'Twitter', value: '@QuizMasterPro', color: 'var(--secondary)' },
-  { icon: '💼', label: 'LinkedIn', value: 'QuizMaster Pro', color: '#0077B5' },
-  { icon: '📍', label: 'Location', value: 'San Francisco, CA', color: 'var(--accent)' },
+  { icon: '📧', label: 'Email', value: 'support@qbit.pro', color: 'var(--primary)' },
+  { icon: '🐦', label: 'Twitter', value: '@QBit', color: 'var(--secondary)' },
+  { icon: '💼', label: 'LinkedIn', value: 'QBit', color: '#0077B5' },
+  { icon: '📍', label: 'Location', value: 'Chitkra University, Rajpura', color: 'var(--accent)' },
 ];
 
 const faqs = [
-  { q: 'Is QuizMaster Pro free?', a: 'Yes! Creating an account and taking quizzes is completely free. No credit card required.' },
+  { q: 'Is QBit free?', a: 'Yes! Creating an account and taking quizzes is completely free. No credit card required.' },
   { q: 'How are scores stored?', a: 'All your quiz scores and performance data are securely stored in our MongoDB database, linked to your account.' },
   { q: 'Can I retake a quiz?', a: 'Absolutely! You can retake any quiz as many times as you want. Questions are shuffled each time.' },
   { q: 'How many questions per quiz?', a: 'Each topic has 10 carefully curated questions. You have 10 minutes to complete each quiz.' },

@@ -169,7 +169,7 @@ const Home = () => {
       <section style={{ padding: '100px 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 60 }}>
-            <h2 className="section-title">Why QuizMaster Pro?</h2>
+            <h2 className="section-title">Why QBit ?</h2>
             <div className="divider" style={{ margin: '12px auto' }} />
             <p className="section-subtitle" style={{ margin: '16px auto 0' }}>
               Built for knowledge seekers who take their learning seriously.
@@ -227,7 +227,7 @@ const Home = () => {
         color: 'var(--text-muted)',
         fontSize: '0.875rem',
       }}>
-        <span style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.05em' }}>QUIZMASTER PRO</span>
+        <span style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.05em' }}>QBit</span>
         {' — '}Built with MERN Stack · {new Date().getFullYear()}
       </footer>
     </div>

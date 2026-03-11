@@ -73,7 +73,7 @@ const Navbar = () => {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-            }}>QUIZMASTER</span>
+            }}>QBit</span>
           </Link>
 
           {/* Desktop links */}
