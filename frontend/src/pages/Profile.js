@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api';
 import { useAuth } from '../context/AuthContext';
 
 const Profile = () => {
@@ -10,7 +10,7 @@ const Profile = () => {
 
   useEffect(() => {
     document.title = 'My Profile — QuizMaster Pro';
-    axios.get('/api/scores/me')
+    api.get('/api/scores/me')
       .then((res) => setData(res.data))
       .catch(console.error)
       .finally(() => setLoading(false));

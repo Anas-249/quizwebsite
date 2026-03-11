@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api';
 
 const QUIZ_TIME = 60 * 10; // 10 minutes
 
@@ -37,7 +37,7 @@ const Quiz = () => {
 
   const fetchQuiz = async () => {
     try {
-      const res = await axios.get(`/api/quiz/${topic}`);
+      const res = await api.get(`/api/quiz/${topic}`);
       setQuizData(res.data);
       startTimeRef.current = Date.now();
     } catch (err) {
@@ -64,7 +64,7 @@ const Quiz = () => {
     }));
 
     try {
-      const submitRes = await axios.post(`/api/quiz/${topic}/submit`, { answers, timeTaken });
+      const submitRes = await api.post(`/api/quiz/${topic}/submit`, { answers, timeTaken });
       const { score, totalQuestions, percentage, results, answers: correctAnswers } = submitRes.data;
 
       // Build correctAnswerMap
@@ -74,7 +74,7 @@ const Quiz = () => {
       setResult({ score, totalQuestions, percentage, timeTaken, results, correctMap });
 
       // Save score
-      await axios.post('/api/scores', {
+      await api.post('/api/scores', {
         topic: quizData.topic.name,
         topicSlug: topic,
         score,

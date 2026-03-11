@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api';
 
 const AuthContext = createContext();
 
@@ -17,9 +17,9 @@ export const AuthProvider = ({ children }) => {
   // Set axios default header
   useEffect(() => {
     if (token) {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     } else {
-      delete axios.defaults.headers.common['Authorization'];
+      delete api.defaults.headers.common['Authorization'];
     }
   }, [token]);
 
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
     const verifyToken = async () => {
       if (!token) { setLoading(false); return; }
       try {
-        const res = await axios.get('/api/auth/me');
+        const res = await api.get('/api/auth/me');
         setUser(res.data.user);
       } catch {
         setToken(null);
@@ -42,22 +42,22 @@ export const AuthProvider = ({ children }) => {
   }, [token]);
 
   const login = async (email, password) => {
-    const res = await axios.post('/api/auth/login', { email, password });
+    const res = await api.post('/api/auth/login', { email, password });
     const { token: newToken, user: newUser } = res.data;
     setToken(newToken);
     setUser(newUser);
     localStorage.setItem('qm_token', newToken);
-    axios.defaults.headers.common['Authorization'] = `Bearer ${newToken}`;
+    api.defaults.headers.common['Authorization'] = `Bearer ${newToken}`;
     return res.data;
   };
 
   const signup = async (name, email, password) => {
-    const res = await axios.post('/api/auth/signup', { name, email, password });
+    const res = await api.post('/api/auth/signup', { name, email, password });
     const { token: newToken, user: newUser } = res.data;
     setToken(newToken);
     setUser(newUser);
     localStorage.setItem('qm_token', newToken);
-    axios.defaults.headers.common['Authorization'] = `Bearer ${newToken}`;
+    api.defaults.headers.common['Authorization'] = `Bearer ${newToken}`;
     return res.data;
   };
 
@@ -65,7 +65,7 @@ export const AuthProvider = ({ children }) => {
     setToken(null);
     setUser(null);
     localStorage.removeItem('qm_token');
-    delete axios.defaults.headers.common['Authorization'];
+    delete api.defaults.headers.common['Authorization'];
   };
 
   return (

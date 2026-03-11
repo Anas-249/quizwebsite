@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api';
 import { useAuth } from '../context/AuthContext';
 
 const Dashboard = () => {
@@ -18,8 +18,8 @@ const Dashboard = () => {
   const fetchData = async () => {
     try {
       const [topicsRes, scoresRes] = await Promise.all([
-        axios.get('/api/quiz/topics'),
-        axios.get('/api/scores/me'),
+        api.get('/api/quiz/topics'),
+        api.get('/api/scores/me'),
       ]);
       setTopics(topicsRes.data.topics);
       setScores(scoresRes.data);
